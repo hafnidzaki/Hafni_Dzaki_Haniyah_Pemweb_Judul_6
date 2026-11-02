@@ -256,18 +256,6 @@ async function deleteMahasiswa(id, nama) {
         } else {
             showAlert(result.message || 'Gagal menghapus data', 'danger');
         }
-<<<<<<< HEAD
-
-        
-    } catch (error) {
-        showAlert(`Gagal menghapus: ${error.message}`, 'danger');
-    }
-}
-
-=======
->>>>>>> branch_2
-
-        
     } catch (error) {
         showAlert(`Gagal menghapus: ${error.message}`, 'danger');
     }
