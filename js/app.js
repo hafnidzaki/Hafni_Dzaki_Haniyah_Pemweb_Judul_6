@@ -236,47 +236,7 @@ if (formTambah) {
     });
 }
 
-// 5. Fetch API DELETE: Menghapus Data Secara Asinkron
-async function deleteMahasiswa(id, nama) {
-    // Percobaan 6-4 Langkah 2
-    if (!confirm(`Apakah Anda yakin ingin menghapus mahasiswa "${nama}"?`)) {
-        return;
-    }
-    try {
-        // Percobaan 6-4 Langkah 3
-        const response = await fetch(`${API_URL}?id=${id}`, {
-            method: 'DELETE'
-        });
-        const result = await response.json();
-        
-        // Percobaan 6-4 Langkah 4
-        if (response.ok && result.status === 'success') {
-            showAlert(result.message, 'success');
-            loadMahasiswa(); // Refresh data otomatis
-        } else {
-            showAlert(result.message || 'Gagal menghapus data', 'danger');
-        }
 
-        
-    } catch (error) {
-        showAlert(`Gagal menghapus: ${error.message}`, 'danger');
-    }
-}
-
-// 6. Pencarian Real-Time (Live Search via Fetch API)
-if (inputSearch) {
-    let timer = null;
-    inputSearch.addEventListener('input', function () {
-    // Percobaan 6-4 Langkah 5
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-           loadMahasiswa(inputSearch.value.trim());
-    }, 300);
-
-    });
-}
-// Inisialisasi: Panggil Data Pertama Kali
-loadMahasiswa();
 
 //INI KODE UNTUK BRANCH 1 YAAAAA!!!!
 //hahahahahAHAHAHAHAH
